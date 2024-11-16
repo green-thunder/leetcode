@@ -2,11 +2,11 @@ from utils.updater import SolutionUpdater
 
 new_solutions = [
     {
-        "index": 1,
-        "language": "python",
+        "index": 3,
+        "language": "java",
         "title": "Two Sum",
         "difficulty": "easy",
-        "link": "https://leetcode.com/problems/two-sum/"
+        "slug": "two-sum"
     }
 ]
 
