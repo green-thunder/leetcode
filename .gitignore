@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 .vscode
 utils
-upload_table.py
 # C extensions
 *.so
 
@@ -155,6 +154,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+upload_table.py
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
