@@ -15,36 +15,19 @@ class ListNode:
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        l1_cr = l1
-        l2_cr = l2
-        result = ListNode()
-        dummy = result
+        dummy = result = ListNode()
         odd = 0 
-        while l1_cr and l2_cr:
-            sum = l1_cr.val + l2_cr.val + odd
-            odd = sum//10
-            dummy.next = ListNode(sum%10)
+        while l1 or l2 or odd:
+            val1 = l1.val if l1 else 0 
+            val2 = l2.val if l2 else 0 
+            sum = val1 + val2 + odd
+            mod, res = divmod(sum, 10)
+            dummy.next = ListNode(res)
             dummy = dummy.next
-            l1_cr = l1_cr.next
-            l2_cr = l2_cr.next
-        
-        while l1_cr:
-            sum = l1_cr.val + odd
-            odd = sum // 10
-            dummy.next = ListNode(sum%10)
-            dummy = dummy.next
-            l1_cr = l1_cr.next
-
-        while l2_cr:
-            sum = l2_cr.val + odd
-            odd = sum // 10
-            dummy.next = ListNode(sum%10)
-            dummy = dummy.next
-            l2_cr = l2_cr.next
-        
-        if odd:
-            dummy.next = ListNode(odd)
-
+            if l1:
+                l1 = l1.next
+            if l2:
+                l2 = l2.next
         return result.next
     
 
