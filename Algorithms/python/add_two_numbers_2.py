@@ -21,7 +21,7 @@ class Solution:
             val1 = l1.val if l1 else 0 
             val2 = l2.val if l2 else 0 
             sum = val1 + val2 + odd
-            mod, res = divmod(sum, 10)
+            odd, res = divmod(sum, 10)
             dummy.next = ListNode(res)
             dummy = dummy.next
             if l1:
